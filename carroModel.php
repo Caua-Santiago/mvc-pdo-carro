@@ -16,10 +16,9 @@ function listarCarros($pdo)
 function cadastrarCarros($pdo, $dados)
 {
     $stmt = $pdo->prepare("
-        INSERT INTO carro (nome, modelo, placa) 
-        VALUES (?, ?, ?)");
+        INSERT INTO carro (modelo, placa) 
+        VALUES (?, ?)");
     $stmt->execute([
-        $dados["nome"],
         $dados["modelo"],
         $dados["placa"]
     ]);
@@ -28,7 +27,7 @@ function cadastrarCarros($pdo, $dados)
 // BUSCAR
 function buscarCarros($pdo, $id_carro)
 {
-    $stmt = $pdo->prepare("SELECT * FROM carro WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT * FROM carro WHERE id_carro = ?");
     $stmt->execute([$id_carro]);
     return $stmt->fetch();
 }
@@ -37,18 +36,17 @@ function buscarCarros($pdo, $id_carro)
 function editarCarros($pdo, $dados)
 {
     $stmt = $pdo->prepare("
-        UPDATE carro SET nome = ?, 
-               modelo = ?, 
-               placa = ?
+        UPDATE carro
+        SET modelo = ?,
+            placa = ?
         WHERE id_carro = ?
     ");
-    $stmt->execute(
-        [
-            $dados["nome"],
-            $dados["modelo"],
-            $dados["placa"],
-        ]
-    );
+
+    $stmt->execute([
+        $dados["modelo"],
+        $dados["placa"],
+        $dados["id"]
+    ]);
 }
 
 // EXCLUIR
