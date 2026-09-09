@@ -36,7 +36,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary"> Salvar</button>
-                    <button type="button" class="btn btn-secondary" onclick="novoCarro()"> Novo </button>
+                    <button type="button" class="btn btn-secondary" onclick="limparFormCarro()"> Limpar </button>
                 </form>
             </div>
         </div>

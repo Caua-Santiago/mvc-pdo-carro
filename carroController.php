@@ -64,7 +64,7 @@ switch ($acao) {
 
     // EXCLUIR
     case "excluir":
-        excluirCarro($pdo, $_POST["id"]);
+        excluirCarro($pdo, $_POST["id_carro"]);
 
         echo json_encode([
             "sucesso" => true,

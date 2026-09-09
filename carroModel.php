@@ -52,6 +52,6 @@ function editarCarros($pdo, $dados)
 // EXCLUIR
 function excluirCarro($pdo, $id_carro)
 {
-    $stmt = $pdo->prepare("DELETE FROM carro WHERE id = ?");
+    $stmt = $pdo->prepare("DELETE FROM carro WHERE id_carro = ?");
     $stmt->execute([$id_carro]);
 }

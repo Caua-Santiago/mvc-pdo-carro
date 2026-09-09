@@ -2,12 +2,12 @@ CREATE DATABASE	ESTACIONAMENTO;
 USE estacionamento;
 
 CREATE TABLE carro (
-	id_carro INT AUTO_INCREMENT PRIMARY KEY,
+		INT AUTO_INCREMENT PRIMARY KEY,
     modelo   VARCHAR(50) NOT NULL,
     placa	 VARCHAR(20) NOT NULL
     );
 
-INSERT INTO carro (modelo,placa) VALUES ('Onix', 'ABC1D23');
+INSERT INTO carro (modelo,placa) VALUES ('Onix', '	');
 INSERT INTO carro (modelo,placa) VALUES ('Corolla', 'UVW1X23');
 INSERT INTO carro (modelo,placa) VALUES ('Renegade', 'BCD7E89');
 
